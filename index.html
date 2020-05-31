@@ -1,0 +1,976 @@
+<html>
+<title>Info-Tech Gandaki</title>
+
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/min.css">
+ <!-- Favicons --> 
+ <link rel="shortcut icon" type="image/png" href="img/fav.png">
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+ html, body, h1 {
+	 padding: 0;
+	 margin: 0;
+	 font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+	 color: #ffffff;
+}
+ #app {
+	 background: #0a0a0a;
+	 height: 100vh;
+	 width: 100%;
+	 margin: 0;
+	 padding: 0;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 background: linear-gradient(rgba(10, 10, 10, .6), rgba(0, 0, 0, .9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url('img/bg.jpg');
+	 background-size: cover;
+	 background-position: center;
+	 z-index: 1;
+}
+ #wrapper {
+	 text-align: center;
+}
+ .sub {
+	 color: #64dcdc;
+	 letter-spacing: 1em;
+}
+/* Our mixin positions a copy of our text directly on our existing text, while also setting content to the appropriate text set in the data-text attribute. */
+ .glitch {
+	 position: relative;
+	 color: white;
+	 font-size: 4em;
+	 letter-spacing: 0.5em;
+	/* Animation provies a slight random skew. Check bottom of doc for more information on how to random skew. */
+	 animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+ .glitch::before {
+	 content: attr(data-text);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 left: 2px;
+	 text-shadow: -2px 0 #ff00c1;
+	/* Creates an initial clip for our glitch. This works in a typical top,right,bottom,left fashion and creates a mask to only show a certain part of the glitch at a time. */
+	 clip: rect(44px, 450px, 56px, 0);
+	/* Runs our glitch-anim defined below to run in a 5s loop, infinitely, with an alternating animation to keep things fresh. */
+	 animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+ .glitch::after {
+	 content: attr(data-text);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 left: -2px;
+	 text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+	 animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+/* Creates an animation with 20 steaps. For each step, it calculates a percentage for the specific step. It then generates a random clip box to be used for the random glitch effect. Also adds a very subtle skew to change the 'thickness' of the glitch.*/
+ @keyframes glitch-anim {
+	 0% {
+		 clip: rect(50px, 9999px, 24px, 0);
+		 transform: skew(0.96deg);
+	}
+	 5% {
+		 clip: rect(9px, 9999px, 14px, 0);
+		 transform: skew(0.4deg);
+	}
+	 10% {
+		 clip: rect(17px, 9999px, 83px, 0);
+		 transform: skew(0.68deg);
+	}
+	 15% {
+		 clip: rect(67px, 9999px, 3px, 0);
+		 transform: skew(0.21deg);
+	}
+	 20% {
+		 clip: rect(43px, 9999px, 92px, 0);
+		 transform: skew(0.82deg);
+	}
+	 25% {
+		 clip: rect(42px, 9999px, 99px, 0);
+		 transform: skew(0.65deg);
+	}
+	 30% {
+		 clip: rect(55px, 9999px, 69px, 0);
+		 transform: skew(0.62deg);
+	}
+	 35% {
+		 clip: rect(48px, 9999px, 68px, 0);
+		 transform: skew(0.34deg);
+	}
+	 40% {
+		 clip: rect(67px, 9999px, 21px, 0);
+		 transform: skew(0.93deg);
+	}
+	 45% {
+		 clip: rect(33px, 9999px, 77px, 0);
+		 transform: skew(0.33deg);
+	}
+	 50% {
+		 clip: rect(35px, 9999px, 19px, 0);
+		 transform: skew(0.66deg);
+	}
+	 55% {
+		 clip: rect(4px, 9999px, 43px, 0);
+		 transform: skew(0.86deg);
+	}
+	 60% {
+		 clip: rect(19px, 9999px, 9px, 0);
+		 transform: skew(0.37deg);
+	}
+	 65% {
+		 clip: rect(65px, 9999px, 2px, 0);
+		 transform: skew(0.08deg);
+	}
+	 70% {
+		 clip: rect(4px, 9999px, 10px, 0);
+		 transform: skew(0.76deg);
+	}
+	 75% {
+		 clip: rect(15px, 9999px, 10px, 0);
+		 transform: skew(0.69deg);
+	}
+	 80% {
+		 clip: rect(68px, 9999px, 13px, 0);
+		 transform: skew(0.19deg);
+	}
+	 85% {
+		 clip: rect(54px, 9999px, 15px, 0);
+		 transform: skew(0.08deg);
+	}
+	 90% {
+		 clip: rect(61px, 9999px, 97px, 0);
+		 transform: skew(0.5deg);
+	}
+	 95% {
+		 clip: rect(72px, 9999px, 82px, 0);
+		 transform: skew(0.6deg);
+	}
+	 100% {
+		 clip: rect(53px, 9999px, 7px, 0);
+		 transform: skew(0.04deg);
+	}
+}
+ @keyframes glitch-anim2 {
+	 0% {
+		 clip: rect(10px, 9999px, 5px, 0);
+		 transform: skew(0.89deg);
+	}
+	 5% {
+		 clip: rect(34px, 9999px, 7px, 0);
+		 transform: skew(0.37deg);
+	}
+	 10% {
+		 clip: rect(37px, 9999px, 3px, 0);
+		 transform: skew(0.51deg);
+	}
+	 15% {
+		 clip: rect(99px, 9999px, 87px, 0);
+		 transform: skew(0.97deg);
+	}
+	 20% {
+		 clip: rect(22px, 9999px, 98px, 0);
+		 transform: skew(0.73deg);
+	}
+	 25% {
+		 clip: rect(63px, 9999px, 33px, 0);
+		 transform: skew(0.13deg);
+	}
+	 30% {
+		 clip: rect(25px, 9999px, 39px, 0);
+		 transform: skew(0.52deg);
+	}
+	 35% {
+		 clip: rect(84px, 9999px, 17px, 0);
+		 transform: skew(0.26deg);
+	}
+	 40% {
+		 clip: rect(46px, 9999px, 60px, 0);
+		 transform: skew(0.22deg);
+	}
+	 45% {
+		 clip: rect(76px, 9999px, 52px, 0);
+		 transform: skew(0.85deg);
+	}
+	 50% {
+		 clip: rect(9px, 9999px, 66px, 0);
+		 transform: skew(0.3deg);
+	}
+	 55% {
+		 clip: rect(29px, 9999px, 40px, 0);
+		 transform: skew(0.24deg);
+	}
+	 60% {
+		 clip: rect(51px, 9999px, 7px, 0);
+		 transform: skew(0.91deg);
+	}
+	 65% {
+		 clip: rect(99px, 9999px, 75px, 0);
+		 transform: skew(0.23deg);
+	}
+	 70% {
+		 clip: rect(43px, 9999px, 71px, 0);
+		 transform: skew(0.93deg);
+	}
+	 75% {
+		 clip: rect(100px, 9999px, 81px, 0);
+		 transform: skew(0.86deg);
+	}
+	 80% {
+		 clip: rect(3px, 9999px, 27px, 0);
+		 transform: skew(0.17deg);
+	}
+	 85% {
+		 clip: rect(43px, 9999px, 39px, 0);
+		 transform: skew(0.41deg);
+	}
+	 90% {
+		 clip: rect(21px, 9999px, 81px, 0);
+		 transform: skew(0.63deg);
+	}
+	 95% {
+		 clip: rect(41px, 9999px, 100px, 0);
+		 transform: skew(0.15deg);
+	}
+	 100% {
+		 clip: rect(84px, 9999px, 71px, 0);
+		 transform: skew(0.13deg);
+	}
+}
+ @keyframes glitch-skew {
+	 0% {
+		 transform: skew(-2deg);
+	}
+	 10% {
+		 transform: skew(3deg);
+	}
+	 20% {
+		 transform: skew(3deg);
+	}
+	 30% {
+		 transform: skew(4deg);
+	}
+	 40% {
+		 transform: skew(5deg);
+	}
+	 50% {
+		 transform: skew(2deg);
+	}
+	 60% {
+		 transform: skew(2deg);
+	}
+	 70% {
+		 transform: skew(-2deg);
+	}
+	 80% {
+		 transform: skew(4deg);
+	}
+	 90% {
+		 transform: skew(1deg);
+	}
+	 100% {
+		 transform: skew(0deg);
+	}
+}
+ .item{
+    width: 30px;
+}
+a{
+    text-decoration:none;
+}
+
+
+.item a p.new-label span{
+  position: center;
+  content: 'NEW'
+}
+.item:hover a p.new-label span{
+  display: none;
+}
+.item:hover a p.new-label:after{
+  content: 'CLUB';
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 0px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+.about {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+.row.heading h2 {
+    color: #fff;
+    font-size: 52.52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.heading.heading-icon {
+    display: block;
+}
+.padding-lg {
+	display: block;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.practice-area.padding-lg {
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+.practice-area .inner{ 
+     border:1px solid #999999; 
+	 text-align:center; 
+	 margin-bottom:28px; 
+	 padding:40px 25px;
+}
+.our-webcoderskull .cnt-block:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border: 0;
+}
+.practice-area .inner h3{ 
+    color:#3c3c3c; 
+	font-size:24px; 
+	font-weight:500;
+	font-family: 'Poppins', sans-serif;
+	padding: 10px 0;
+}
+.practice-area .inner p{ 
+    font-size:14px; 
+	line-height:22px; 
+	font-weight:400;
+}
+.practice-area .inner img{
+	display:inline-block;
+}
+
+
+.our-webcoderskull{
+  background: url("http://www.webcoderskull.com/img/right-sider-banner.png") no-repeat center top / cover;
+  
+}
+.our-webcoderskull .cnt-block{ 
+   float:left; 
+   width:100%; 
+   background:#fff; 
+   padding:30px 20px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
+}
+.our-webcoderskull .cnt-block figure{
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
+}
+.our-webcoderskull .cnt-block img{ 
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+}
+.our-webcoderskull .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
+}
+.our-webcoderskull .cnt-block h3 a{
+  text-decoration:none;
+	color:#2a2a2a;
+}
+.our-webcoderskull .cnt-block h3 a:hover{
+	color:#337ab7;
+}
+.our-webcoderskull .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
+}
+.our-webcoderskull .cnt-block .follow-us{
+	margin:20px 0 0;
+}
+.our-webcoderskull .cnt-block .follow-us li{ 
+    display:inline-block; 
+	width:auto; 
+	margin:0 5px;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa{ 
+   font-size:24px; 
+   color:#767676;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+   color:#025a8e;
+}
+
+    #logo{
+    	position:absolute;
+    	top:20;
+    	left:20;
+    }
+	
+		ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 0px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+</style>
+</head>
+<body><a href="#">
+    <div id="logo">
+    	<img width="60px" height="60px"src="img/fav.png">
+    </div></a>
+<div id="home">	
+<div id="app">
+	<div id="wrapper">
+		<!-- Make sure data-text equals the text you put inside the tags. -->
+		<h1 class="glitch" data-text="
+Info-Tech">Info-Tech</h1><center>
+		<div class="item">
+    <a href="javascript:void(0)">
+         <p class=" sub label success new-label"><span class="align">GANDAKI</span></p>
+    </a></center><br>
+</div><nobr>
+ <a class="navbar-brand js-scroll-trigger" href="https://github.com/infotechgandaki" target="_blank">
+                    <img height="40px" width="40px" src="img/git.png" alt="Github" />
+                </a>
+            <a class="navbar-brand js-scroll-trigger" href="https://www.facebook.com/InfoTechGandaki" target="_blank">
+                    <img height="40px" width="40px" src="img/fb.png" alt="FB" />
+                    </a>
+
+
+
+                <a class="navbar-brand js-scroll-trigger" href="https://www.instagram.com/infotechgandaki/" target="_blank">
+                    <img height="40px" width="40px" src="img/in.png" alt="Instagram" />
+                </a></nobr>
+	</div>
+</div></div>
+<div id="about" class="about" ><center>
+
+       <div class="row heading heading-icon">
+        <h2>About</h2>
+    </div> <br><h4>
+     <IMG BORDER="0" ALIGN="Left" width="500px" height="350px" SRC="img/abt.jpg">Infotech Club aims to engage students in Information Technology in a fun and meaningful way and helping them to learn skills such as use of digital media, arduino technologies, cyber security, programming, coding and games development.
+   <br> <br><p> Through different wrokshops, tech-talks & competitions , students will better appreciate technology and learn about web-app development, game development, robotics and many more.</p>
+	<br><br><a href="https://docs.google.com/forms/d/e/1FAIpQLSe5GeXqVMylpdrVF4UEk-NWjJe8X0yfRA2AwQLDM-Xk8KLO-Q/viewform?fbclid=IwAR1-hrim2siv5QQ6dID_SpS2DOGIkUlNTEtW4R_EeTxFr9Yc0yeQl1Ku0eg" target="_blank"><button class="btn-secondary">Join Now</button></a><br><br></div>
+</center></h4>
+
+
+<div id="comittee"  style="background-color:  #2A2B26;  color: #D7D7CE; ">
+<link href="css/min.css" rel="stylesheet" id="bootstrap-css">
+<script src="js/min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+        <h2>Comittee</h2>
+    </div>
+    <ul class="row">
+
+      <li class="col-2 col-md-6 col-lg-5.5">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/sur.jpg" class="img-responsive" alt=""></figure>
+            <h3>Surya Thapa</h3>
+            <p>Teacher Coordinator</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/Suryaa.thapa" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+       
+              <li><a href="https://np.linkedin.com/in/suryaathapa" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+      <li class="col-12 col-md-6 col-lg-5.5">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/kb.jpg" class="img-responsive" alt=""></figure>
+            <h3>Kabita Baral</h3>
+            <p>Teacher Coordinator</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/kabita.baral.9" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/kabitabaral061" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            
+            </ul>
+          </div>
+      </li>
+
+	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/man.jpg" class="img-responsive" alt=""></figure>
+            <h3>Manish Gotame</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/iamatombomb" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			  
+              <li><a href="https://twitter.com/ManishGotame" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			  <li><a href="https://github.com/ManishGotame" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+              
+            </ul>
+          </div>
+      </li>
+	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><a href="https://sapkotaprabesh.github.io/" target="_blank"><img src="img/pra.png" class="img-responsive" alt=""></figure>
+            <h3>Prabesh Sapkota</h3>
+            <p>Executive Member</p></a>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.messenger.com/t/prabesh.sapkota.18" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			  <li><a href="https://github.com/Prabesh01" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+              <li><a href="https://medium.com/@prabesh_sapkota"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+              
+            </ul>
+          </div>
+      </li>
+	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/pmg.jpg" class="img-responsive" alt=""></figure>
+            <h3>Prashant Gayak</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/prwsantmangayak" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+             
+            </ul>
+          </div>
+      </li>
+	  	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/saj.png" class="img-responsive" alt=""></figure>
+            <h3>Sajal Regmi</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.messenger.com/t/sajal.regmi.35" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         
+            </ul>
+				        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/san.jpg" class="img-responsive" alt=""></figure>
+            <h3>Sanjiv Paharii</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/pahari777" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/pahari_sanjiv" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/SanjivPahari" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+
+            </ul>
+          </div>
+      </li>
+	  	    
+	  	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/sat.jpg" class="img-responsive" alt=""></figure>
+            <h3>Satya Dahal</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/guns.roses.19" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+	  	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="img/ni.jpg" class="img-responsive" alt=""></figure>
+            <h3>Nisha Gurung</h3>
+            <p>Executive Member</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/profile.php?id=100009263804485" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+	  	  	        <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><a href="https://santoshbrl.com.np/" target="_blank"><img src="img/sant.jpg" class="img-responsive" alt=""></figure>
+            <h3>Santosh Baral</h3>
+            <p>Technical Coordinator</p></a>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.facebook.com/santoshbrl5" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/santoshbrl5" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/santosh-baral-390835166/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+          </div>
+      </li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<div id="programs">
+<div class="container mt-5 mb-5">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+
+			<h4>Programs</h4>
+			<ul class="timeline">
+				<li>
+					<a href="javascript:void(0)">Club Formed</a>
+					<a href="javascript:void(0)" class="float-right">August, 2019</a>
+					
+				</li>
+				<li>
+					<a href="javascript:void(0)">Orientation Pragram</a>
+					<a href="javascript:void(0)" class="float-right">9 August, 2019</a>
+					<p>Orientation Program for Class 9 to 12 including A-Level was succesfully organized in the ICT Building, GBS.</p>
+				</li>
+				<li>
+					<a href="javascript:void(0)">Tech-Talk #1</a>
+					<a href="javascript:void(0)" class="float-right">23 August, 2019</a>
+					<p>Tech talk by Aashish Shrestha (12 B) on Dark Web & <br>
+ by Prashant Man Gayak (12 A) on Game Development.
+						</p>
+				</li>
+								<li>
+					<a href="javascript:void(0)">Tech-Talk #2</a>
+					<a href="javascript:void(0)" class="float-right">6 September, 2019</a>
+					<p>Tech talk by Satya Prakash Dahal (12 B) on Malware & <br>
+ by Manish Gotame (A2) on Artificial Intelligence.
+						</p>
+				</li>
+				<li>
+					<a href="javascript:void(0)">Pentester Nepal Pokhara Meetup</a>
+					<a href="javascript:void(0)" class="float-right">28 September, 2019</a>
+					<p>
+ Prabesh Sapkota talked about online privacy.<br>
+Roopesh Acharya talked about OWASP TOP 10.<br>
+Santosh Brl talked about a facebook bug he found.<br>
+Suman Bhandari talked about cyber security fundamentals focusing for beginners.
+						</p>
+				</li>
+												<li>
+					<a href="javascript:void(0)">Tech-Talk #3</a>
+					<a href="javascript:void(0)" class="float-right">November, 2019</a>
+					<p>Tech talk by Santosh Baral (A2) on Wordpress & <br>
+ by Prashant Man Gayak (12 A) on Unity.
+						</p>
+				</li>
+											<li>
+					<a href="javascript:void(0)">Workshop #1</a>
+					<a href="javascript:void(0)" class="float-right">January, 2020</a>
+					<p>Workshop By by Prashant MAn Gayak (12 A) on Game Development Using Unity &
+ by Sajal Regmi (12 C) and Sanjiv Pahari (12 A) on Web Development.<br>
+ The workshop was conducted for few weeks.
+						</p>
+				</li>
+								<li>
+					<a href="javascript:void(0)">Upcomming Programmes</a>
+					<a href="javascript:void(0)" class="float-right">2020</a>
+					<p>Upcomming programs will be updated here. Stay tuned :)
+						</p>
+				</li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+<footer class="footer-distributed">
+		<div class="footer-left">
+ 
+		<h3>Info-Tech<span>Gandaki</span></h3>
+ 
+		<p class="footer-links">
+		<a href="#home">Home</a>
+	&middot;
+	
+		<a href="#about">About</a>
+			&middot;
+	
+		<a href="#comittee">Comittee</a>
+&middot;
+	
+		<a href="#programs">Programs</a>
+		
+	</p>
+ 
+		<p class="footer-company-name">Info-Tech Gandaki &copy; 2020<br><br><a href="https://sapkotaprabesh.github.io/" target="_blank"> Made By Prabesh Sapkota</a></p>
+		</div>
+ 
+		<div class="footer-center">
+ 
+		<div>
+		<i class="fa fa-map-marker"></i>
+		<p><span>Lamachaur Rd 16</span> Pokhara, Nepal</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-phone"></i>
+		<p>+977 9805176917</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="mailto:infotech@gbs.edu.np">infotech@gbs.edu.np</a></p>
+		</div>
+ 
+		</div>
+ 
+		<div class="footer-right">
+ 
+		<p class="footer-company-about">
+		<span>About the club</span>
+	Info Tech Gandaki is a club for all the tech enthusiasts.
+		</p>
+ 
+		<div class="footer-icons">
+ 
+		<a href="https://github.com/infotechgandaki" target="_blank"><i class="fa fa-github"></i></a>
+		<a href="https://www.facebook.com/InfoTechGandaki" target="_blank"><i class="fa fa-facebook"></i></a>
+		<a href="https://www.instagram.com/infotechgandaki/" target="_blank"><i class="fa fa-instagram"></i></a>
+ 
+		</div>
+ 
+		</div>
+ 
+		</footer>
+ 
+<button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+</body>
+</html>
